@@ -117,7 +117,7 @@ function sqn_meta_box_save( $post_id )
 
 //end post meta
 
-function sequence_slider_display( $atts ) {
+function sequence_slider_display( $atts=null ) {
 
    extract( shortcode_atts( array(
 	   'limit' => null,
