@@ -37,8 +37,11 @@ The plugin uses [Sequence Slider](http://www.sequencejs.com/)
 
 1. Upload and extract the zip file downloaded to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Click on the new menu item "WP Sequence Slider" and create your first Slider.
-1. Use the slider shortcode [sequence_slider limit=10] to insert the slider into your posts or pages. If you want to call the slider anywhere in the template page, use this php code <?php echo sequence_slider_display(); ?>.
+1. Click on the new menu item "WP Sequence Slider" and create your first slide.
+1. Use the slider shortcode `[sequence_slider]` to insert the slider into your posts or pages. This displays all slides in the slider.
+1. To display all slides from a WP Sequence Slider category, add `slider_category` parameter to the shortcode. You can use either the name of the category or the slug for the category for the value of the parameter `slider_category`. For example, `[sequence_slider slider_category="Beautiful Mountains"]`. More examples: `[sequence_slider slider_category=Lakes]`, `[sequence_slider slider_category=serene-forests]`.
+1. By default the slider shows maximum number of slides as set for "Blog pages show at most" on the Reading settings of the blog. If you want to overide it, then you can add the parameter `limit` to the shortcode. For example, `[sequence_slider slider_category=serene-forests limit=8]`.
+1. If you want to call the slider anywhere in the template page, use this php code `<?php echo sequence_slider_display(); ?>`.
 
 == Frequently asked questions ==
 
