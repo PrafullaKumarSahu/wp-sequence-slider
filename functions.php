@@ -1,7 +1,7 @@
 <?php
 /*
 Author: basanatakumar
-Version: 1.0
+Version: 0.1
 Author URI: http://crayonux.com/
 */
 
@@ -71,7 +71,7 @@ function sequence_slider_init() {
     'rewrite'            => array( 'slug' => 'sequence-slider' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
-    'hierarchical'       => true,
+    'hierarchical'       => false,
     'menu_position'      => null,
 	'taxonomies' => array('slider-category'),
 	// 'sequence_slider_meta_box' => 'add_sequence_slider_metaboxes',
@@ -119,19 +119,17 @@ function sqn_meta_box_save( $post_id )
 
 function sequence_slider_display( $atts ) {
 
-    extract( shortcode_atts( array(
-	    'limit' => 10,
-		'slider_category' => '',
-		'chosen_sliders' => array(),
+   extract( shortcode_atts( array(
+	   'limit' => null,
+		'slider_category' => null,
     ), $atts ) );
 	
 	$args = array(
 		'post_type'=> 'sequence-slider',
 		'posts_per_page'    => $limit,
 		'slider-category' => $slider_category,
-		'post__in' =>explode(",", $chosen_sliders)
 	);
-
+	
 	// The Query
 	$the_query = new WP_Query( $args );
 	
