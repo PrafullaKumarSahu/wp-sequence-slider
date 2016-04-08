@@ -1,7 +1,7 @@
 === WP Sequence Slider ===
-Contributors: basantakumar, kishores, mindfire-solutions
+Contributors: basantakumar, debiprasad, prafulla
 Donate link: http://crayonux.com/projects/wp-sequence-slider/
-Tags: slider,responsive slider,slideshow,nivo, best,responsive,gallery, slider,slider plugin,image, posts,shortcode,links,page,plugin,slider plugin,best slider plugin,wordpress slider, layer slider, layer slider plugin
+Tags: slider,responsive slider,slideshow,nivo,best,responsive,gallery,slider,slider plugin,image,posts,shortcode,links,page,plugin,slider plugin,best slider plugin,wordpress slider,layer slider,layer slider plugin
 Requires at least: 3.0
 Tested up to: 4.4.2
 Stable tag: 1.0
@@ -19,9 +19,9 @@ The plugin is designed for every one to use easily. There are a lots of good fun
 
 = Features =
 
-* Create Unlimited Sliders and you can choose any number of slides by shortcode.
-* Responsive Slider
-* Insert Sliders anywhere on your site using a simple shortcode
+* Create unlimited sliders and you can choose any number of slides by shortcode
+* Responsive slider
+* Insert sliders anywhere on your site using a simple shortcode
 * Custom post type for adding slider items
 * Custom slider link enables you to add external or internal link
 * Custom link text
@@ -42,14 +42,11 @@ The plugin uses [Sequence Slider](http://www.sequencejs.com/)
 
 == Frequently asked questions ==
 
-= Where can I get support ?=
+= Where can I get support? =
 
 Please use the support forum to ask questions the link is below.
 http://crayonux.com/questions/
 
 == Screenshots ==
 
-For details please visit the [WP Sequence Slider Project page](http://crayonux.com/projects/wp-sequence-slider/) page
-
-
-
+For details please visit the [WP Sequence Slider Project page](http://crayonux.com/projects/wp-sequence-slider/) page.
