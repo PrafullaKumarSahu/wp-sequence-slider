@@ -94,9 +94,15 @@ function sqn_slider_link($post) {
     // Get the location data if its already been entered
     $slidermeta = get_post_meta($post->ID, '_link', true);
 	$slidermeta2 = get_post_meta($post->ID, '_text', true);
+	$slidermeta3 = get_post_meta($post->ID, '_display_title_excerpt', true);
     // Echo out the field
     echo '<input type="text" name="_link" value="' . $slidermeta . '"  /><br/><br/>';
 	echo '<input type="text" name="_text" value="' . $slidermeta2 . '"/> <br/><br/>';
+	if($slidermeta3){
+	    echo '<input type="checkbox"  name="_display_title_excerpt" checked value="_display_title_excerpt">Hide Title and Excerpt From Slider<br>';
+	} else{
+		echo '<input type="checkbox"  name="_display_title_excerpt" value="_display_title_excerpt">Hide Title and Excerpt From Slider<br>';
+	}
 }
 
 
@@ -112,6 +118,11 @@ function sqn_meta_box_save( $post_id )
 		update_post_meta( $post_id, '_link', wp_kses( esc_url( $_POST['_link'] ), $allowed ) );
 	if( isset( $_POST['_text'] ) )
 		update_post_meta( $post_id, '_text', wp_kses( $_POST['_text'], $allowed ) );
+	
+	if( isset( $_POST['_display_title_excerpt'] ) )
+		update_post_meta( $post_id, '_display_title_excerpt', true );
+	else
+		update_post_meta( $post_id, '_display_title_excerpt', false );
 }
 
 
@@ -137,7 +148,8 @@ function sequence_slider_display( $atts=null ) {
 
 	// The Loop
 	if ( $the_query->have_posts() ) {
-			$html .= '<div class="sequence-theme">';
+		    //var_dump($the_query);
+		 	$html .= '<div class="sequence-theme">';
 			$html .= '<div class="sequence">';
 			$html .= '<img class="sequence-prev" src="'. SEQUENCE_PLUGIN_URL .'images/bt-prev.png" alt="Previous Frame" />';
 			$html .= '<img class="sequence-next" src="'. SEQUENCE_PLUGIN_URL .'images/bt-next.png" alt="Next Frame" />';
@@ -147,9 +159,11 @@ function sequence_slider_display( $atts=null ) {
 				//echo "<pre>";
 				//print_r($the_query);
 				$html .= '<li class="animate-in">';
-				$html .= '<h3 class="title">' . get_the_title() .'</h3>';
-				$html .= '<h4 class="subtitle">' . get_the_excerpt() .'';
-				$html .= '<a class="slider_link" href="' .get_post_meta( $the_query->post->ID, '_link', true ).'">' . get_post_meta( $the_query->post->ID, '_text', true ) .'</a></h4>';
+				if(get_post_meta( $the_query->post->ID, '_display_title_excerpt', true ) != true){
+				    $html .= '<h3 class="title">' . get_the_title() .'</h3>';
+				    $html .= '<h4 class="subtitle">' . get_the_excerpt() .'</h4>';
+				}
+				$html .= '<h4 class="subtitle"><a class="slider_link" href="' .get_post_meta( $the_query->post->ID, '_link', true ).'">' . get_post_meta( $the_query->post->ID, '_text', true ) .'</a></h4>';
 				$html .= get_the_post_thumbnail($the_query->post->ID, 'full' ,array('class' => 'model')); 
 				$html .= '</li>';
 			}
