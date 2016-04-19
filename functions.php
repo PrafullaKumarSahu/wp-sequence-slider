@@ -1,7 +1,7 @@
 <?php
 /*
 Author: basanatakumar
-Version: 0.1
+Version: 1.0.1
 Author URI: http://crayonux.com/
 */
 
