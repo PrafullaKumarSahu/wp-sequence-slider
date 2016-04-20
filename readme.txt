@@ -25,6 +25,9 @@ The plugin is designed for every one to use easily. There are a lots of good fun
 * Custom post type for adding slider items
 * Custom slider link enables you to add external or internal link
 * Custom link text
+* Hide link on the slider
+* Show/hide title and description of the slider
+* Link on the slider image
 * Every slider is configurable and can have unique and different options
 * Touch gestures navigation for iOS, Android and other touch devices
 * Works on iOS, Android and other mobile devices
