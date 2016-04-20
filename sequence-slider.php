@@ -4,7 +4,7 @@ Plugin Name: WP Sequence Slider
 Plugin URI: http://crayonux.com/projects/wp-sequence-slider/
 Description: WordPress Sequence Slider Plugin is a  beautifully designed and an elegant plugin. It's simple, very easy to use, modern and responsive slider plugin.
 Author: basantakumar, debiprasad, prafulla
-Version: 1.0.1
+Version: 1.0
 Author URI: http://crayonux.com/
 Text Domain: sequence
 */

@@ -1,10 +1,10 @@
 === WP Sequence Slider ===
-Contributors: basantakumar, debiprasad, prafulla
+Contributors: basantakumar, debiprasad, prafulla, themingstrap
 Donate link: http://crayonux.com/projects/wp-sequence-slider/
 Tags: slider,responsive slider,slideshow,nivo,best,responsive,gallery,slider,slider plugin,image,posts,shortcode,links,page,plugin,slider plugin,best slider plugin,wordpress slider,layer slider,layer slider plugin
 Requires at least: 3.0
-Tested up to: 4.5
-Stable tag: 1.0.1
+Tested up to: 4.4.2
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ WordPress Sequence Slider Plugin is a  beautifully designed and an elegant plugi
 The WordPress slider plugin comes by default with a beautiful, responsive, modern and and touch screen enabled layer slider skin. You can also modify the css as per your theme.
 
 The plugin is designed for every one to use easily. There are a lots of good functionality added in the free version of the plugin if you do like the free version please support the plugin by sharing with others.
-[Demo and details](http://crayonux.com/projects/wp-sequence-slider/)
+[Demo and details](http://themingstrap.com/portfolio/wp-sequence-slider/)
 
 = Features =
 
@@ -25,14 +25,11 @@ The plugin is designed for every one to use easily. There are a lots of good fun
 * Custom post type for adding slider items
 * Custom slider link enables you to add external or internal link
 * Custom link text
-* Hide link on the slider
-* Show/hide title and description of the slider
-* Link on the slider image
 * Every slider is configurable and can have unique and different options
 * Touch gestures navigation for iOS, Android and other touch devices
 * Works on iOS, Android and other mobile devices
 
-If you are facing any issue with the plugin and need help, please add your questions here [WP Sequence Slider help](http://crayonux.com/questions/)
+If you are facing any issue with the plugin and need help, please add your questions here [WP Sequence Slider help](http://themingstrap.com/contact-us/)
 
 The plugin uses [Sequence Slider](http://www.sequencejs.com/)
 
@@ -51,8 +48,8 @@ The plugin uses [Sequence Slider](http://www.sequencejs.com/)
 = Where can I get support? =
 
 Please use the support forum to ask questions the link is below.
-http://crayonux.com/questions/
+http://themingstrap.com/contact-us/
 
 == Screenshots ==
 
-For details please visit the [WP Sequence Slider Project page](http://crayonux.com/projects/wp-sequence-slider/) page.
+For details please visit the [WP Sequence Slider Project page](http://themingstrap.com/portfolio/wp-sequence-slider/) page.
