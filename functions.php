@@ -84,6 +84,8 @@ function sequence_slider_init() {
 add_action( 'init', 'sequence_slider_init' );
 
 // added post meta to slider custom post type
+
+remove_action( 'add_meta_boxes', 'add_slider_metaboxes' );
 add_action( 'add_meta_boxes', 'add_slider_metaboxes' );
 function add_slider_metaboxes() {
 	add_meta_box('sqn_hide_title_excerpt', 'Hide Title and Excerpt', 'sqn_hide_title_excerpt', 'sequence-slider', 'normal');
@@ -108,8 +110,9 @@ function sqn_slider_link($post)
     // Get the location data if its already been entered
     $slidermeta_link = get_post_meta($post->ID, '_link', true);
 	$slidermeta_text = get_post_meta($post->ID, '_text', true);
-	$display_read_button = get_post_meta($post->ID, '_display_link_text', true);
+	$display_link_text = get_post_meta($post->ID, '_display_link_text', true);
 	$link_to_featured_image = get_post_meta($post->ID, '_link_to_featured_image', true);
+	
     // Echo out the field
     echo '<input type="text" name="_link" value="' . $slidermeta_link . '"  /><br/><br/>';
 	echo '<input type="text" name="_text" value="' . $slidermeta_text . '"/> <br/><br/>';
@@ -135,28 +138,42 @@ function sqn_meta_box_save( $post_id )
 {
 	// Bail if we're doing an auto save
 	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	
 	// if our current user can't edit this post, bail
 	if( !current_user_can( 'edit_post' ) ) return;
+	
 	// Probably a good idea to make sure your data is set
-	if( isset( $_POST['_link'] ) )
+	if( isset( $_POST['_link'] ) ){
 		update_post_meta( $post_id, '_link', wp_kses( esc_url( $_POST['_link'] ), $allowed ) );
-	if( isset( $_POST['_text'] ) )
+	}
+	if( isset( $_POST['_text'] ) ){
 		update_post_meta( $post_id, '_text', wp_kses( $_POST['_text'], $allowed ) );
+	}
 	
-	if( isset( $_POST['_display_title_excerpt'] ) )
+	if( isset( $_POST['_display_title_excerpt'] ) ){
 		update_post_meta( $post_id, '_display_title_excerpt', true );
-	else
+	}
+	else{
 		update_post_meta( $post_id, '_display_title_excerpt', false );
+	}
 	
-	if( isset( $_POST['_display_link_text'] ) )
+	if( isset( $_POST['_display_link_text'] ) ){
 		update_post_meta( $post_id, '_display_link_text', true );
-	else
-		update_post_meta( $post_id, '_display_link_text', false );
+	    //var_dump($_POST['_display_link_text']);
+		//exit;
+	}
+	else{
+	   update_post_meta( $post_id, '_display_link_text', false );
+	   //var_dump($_POST);
+	   //exit;
+	}
 	
-	if( isset( $_POST['_link_to_featured_image'] ) )
+	if( isset( $_POST['_link_to_featured_image'] ) ){
 		update_post_meta( $post_id, '_link_to_featured_image', true );
-	else
+	}
+	else{
 		update_post_meta( $post_id, '_link_to_featured_image', false );
+	}
 }
 
 
@@ -193,13 +210,16 @@ function sequence_slider_display( $atts=null ) {
 				//echo "<pre>";
 				//print_r($the_query);
 				$html .= '<li class="animate-in">';
+				
 				if(get_post_meta( $the_query->post->ID, '_display_title_excerpt', true ) != true){
 				    $html .= '<h3 class="title">' . get_the_title() .'</h3>';
 				    $html .= '<h4 class="subtitle">' . get_the_excerpt() .'</h4>';
 				}
+				
 				if(get_post_meta( $the_query->post->ID, '_display_link_text', true ) != true){
 				    $html .= '<h4 class="subtitle"><a class="slider_link" href="' .get_post_meta( $the_query->post->ID, '_link', true ).'">' . get_post_meta( $the_query->post->ID, '_text', true ) .'</a></h4>';
 				}
+				
 				if(get_post_meta( $the_query->post->ID, '_link_to_featured_image', true ) == true){
 					$html .= '<a class="model" href="' . get_post_meta( $the_query->post->ID, '_link', true ).'">';
 				    $html .= get_the_post_thumbnail($the_query->post->ID, 'full' ,array('class' => 'model')); 
