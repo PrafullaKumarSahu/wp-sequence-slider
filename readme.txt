@@ -15,7 +15,7 @@ WordPress Sequence Slider Plugin is a  beautifully designed and an elegant plugi
 The WordPress slider plugin comes by default with a beautiful, responsive, modern and and touch screen enabled layer slider skin. You can also modify the css as per your theme.
 
 The plugin is designed for every one to use easily. There are a lots of good functionality added in the free version of the plugin if you do like the free version please support the plugin by sharing with others.
-[Demo and details](http://crayonux.com/projects/wp-sequence-slider/)
+-[Demo and details](http://themingstrap.com/portfolio/wp-sequence-slider/)
 
 = Features =
 
@@ -32,7 +32,7 @@ The plugin is designed for every one to use easily. There are a lots of good fun
 * Touch gestures navigation for iOS, Android and other touch devices
 * Works on iOS, Android and other mobile devices
 
-If you are facing any issue with the plugin and need help, please add your questions here [WP Sequence Slider help](http://crayonux.com/questions/)
+If you are facing any issue with the plugin and need help, please add your questions here [WP Sequence Slider help](http://themingstrap.com/contact-us/)
 
 The plugin uses [Sequence Slider](http://www.sequencejs.com/)
 
@@ -51,8 +51,8 @@ The plugin uses [Sequence Slider](http://www.sequencejs.com/)
 = Where can I get support? =
 
 Please use the support forum to ask questions the link is below.
-http://crayonux.com/questions/
+http://themingstrap.com/contact-us/
 
 == Screenshots ==
 
-For details please visit the [WP Sequence Slider Project page](http://crayonux.com/projects/wp-sequence-slider/) page.
+For details please visit the [WP Sequence Slider Project page](http://themingstrap.com/portfolio/wp-sequence-slider/) page.
