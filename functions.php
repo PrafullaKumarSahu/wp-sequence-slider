@@ -84,8 +84,6 @@ function sequence_slider_init() {
 add_action( 'init', 'sequence_slider_init' );
 
 // added post meta to slider custom post type
-
-remove_action( 'add_meta_boxes', 'add_slider_metaboxes' );
 add_action( 'add_meta_boxes', 'add_slider_metaboxes' );
 function add_slider_metaboxes() {
 	add_meta_box('sqn_hide_title_excerpt', 'Hide Title and Excerpt', 'sqn_hide_title_excerpt', 'sequence-slider', 'normal');
