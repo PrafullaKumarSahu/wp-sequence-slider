@@ -211,11 +211,11 @@ function sequence_slider_display( $atts=null ) {
 				
 				if(get_post_meta( $the_query->post->ID, '_display_title_excerpt', true ) != true){
 				    $html .= '<h3 class="title">' . get_the_title() .'</h3>';
-				    $html .= '<h4 class="subtitle">' . get_the_excerpt() .'</h4>';
+				    $html .= '<h4 class="subtitle">' . get_the_excerpt();
 				}
 				
 				if(get_post_meta( $the_query->post->ID, '_display_link_text', true ) != true){
-				    $html .= '<h4 class="subtitle"><a class="slider_link" href="' .get_post_meta( $the_query->post->ID, '_link', true ).'">' . get_post_meta( $the_query->post->ID, '_text', true ) .'</a></h4>';
+				    $html .= '<a class="slider_link" href="' .get_post_meta( $the_query->post->ID, '_link', true ).'">' . get_post_meta( $the_query->post->ID, '_text', true ) .'</a></h4>';
 				}
 				
 				if(get_post_meta( $the_query->post->ID, '_link_to_featured_image', true ) == true){
